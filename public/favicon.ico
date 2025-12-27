@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is a placeholder favicon.ico file. To generate a true .ico file, use an online converter or a graphics tool. -->
+<!-- For now, this is a copy of favicon.svg for development purposes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#1a202c"/>
+  <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-size="32" fill="#fff">CC</text>
+</svg>
