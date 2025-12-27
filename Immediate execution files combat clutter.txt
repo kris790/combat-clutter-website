@@ -1,0 +1,96 @@
+/**
+ * Combat Clutter LLC Brand Constants
+ * 
+ * Central source of truth for all brand-related information.
+ * Import this file wherever you need Combat Clutter branding.
+ * 
+ * Usage:
+ *   import { BRAND } from '@/lib/brand/constants';
+ *   <h1>{BRAND.TAGLINE}</h1>
+ */
+
+export const BRAND = {
+  // Legal name - use in copyright, terms of service, privacy policy
+  NAME: 'Combat Clutter LLC',
+  
+  // Short name - use in conversational contexts (marketing, blog, social)
+  SHORT_NAME: 'Combat Clutter',
+  
+  // Brand tagline
+  TAGLINE: 'Reclaim Your Space, Restore Your Calm',
+  
+  // Positioning statement
+  POSITIONING: 'Luxury Necessity',
+  
+  // Domain information
+  DOMAIN: 'combatclutter.com',
+  
+  // Location details
+  LOCATION: {
+    CITY: 'Atlanta',
+    STATE: 'GA',
+    STATE_FULL: 'Georgia',
+    DISPLAY: 'Atlanta, GA',
+    METRO_AREA: 'Greater Atlanta',
+    SERVICE_RADIUS: '30 miles from Atlanta',
+  },
+  
+  // Establishment year
+  ESTABLISHED: 2023,
+  
+  // Trust indicator for hero/footer
+  TRUST_INDICATOR: 'Serving Atlanta since 2023',
+  
+  // Contact information
+  CONTACT: {
+    EMAIL: 'hello@combatclutter.com',
+    PHONE: '+1 (404) XXX-XXXX', // TODO: Update with real phone number
+    ADDRESS: {
+      STREET: 'TBD', // TODO: Update when available
+      CITY: 'Atlanta',
+      STATE: 'GA',
+      ZIP: '30303', // TODO: Update with actual ZIP
+    },
+  },
+  
+  // Social media handles
+  SOCIAL: {
+    INSTAGRAM: '@combatclutteratl',
+    INSTAGRAM_URL: 'https://instagram.com/combatclutteratl',
+    FACEBOOK: 'CombatClutterLLC',
+    FACEBOOK_URL: 'https://facebook.com/CombatClutterLLC',
+    LINKEDIN: 'combat-clutter-llc',
+    LINKEDIN_URL: 'https://linkedin.com/company/combat-clutter-llc',
+  },
+  
+  // Copyright notice
+  COPYRIGHT: `© ${new Date().getFullYear()} Combat Clutter LLC. All rights reserved.`,
+  
+  // Business hours
+  HOURS: {
+    WEEKDAYS: '9:00 AM - 6:00 PM',
+    SATURDAY: '10:00 AM - 4:00 PM',
+    SUNDAY: 'Closed',
+  },
+} as const;
+
+// Type for type-safe access
+export type Brand = typeof BRAND;
+
+// Helper functions
+export const getBrandName = (context: 'legal' | 'conversational' = 'conversational'): string => {
+  return context === 'legal' ? BRAND.NAME : BRAND.SHORT_NAME;
+};
+
+export const getFullLocation = (): string => {
+  return BRAND.LOCATION.DISPLAY;
+};
+
+export const getSocialLink = (platform: keyof typeof BRAND.SOCIAL): string => {
+  const links: Record<string, string> = {
+    INSTAGRAM: BRAND.SOCIAL.INSTAGRAM_URL,
+    FACEBOOK: BRAND.SOCIAL.FACEBOOK_URL,
+    LINKEDIN: BRAND.SOCIAL.LINKEDIN_URL,
+  };
+  return links[platform] || '';
+};

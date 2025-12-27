@@ -1,0 +1,96 @@
+{
+  "Combat Clutter Legal Name": {
+    "prefix": "brand",
+    "body": ["Combat Clutter LLC"],
+    "description": "Insert legal brand name (use in copyright, terms, legal docs)"
+  },
+  
+  "Combat Clutter Short Name": {
+    "prefix": "brand-short",
+    "body": ["Combat Clutter"],
+    "description": "Insert conversational brand name (use in marketing, blog)"
+  },
+  
+  "Combat Clutter Tagline": {
+    "prefix": "tagline",
+    "body": ["Reclaim Your Space, Restore Your Calm"],
+    "description": "Insert Combat Clutter tagline"
+  },
+  
+  "Import BRAND Constants": {
+    "prefix": "import-brand",
+    "body": ["import { BRAND } from '@/lib/brand/constants';"],
+    "description": "Import BRAND constants from brand file"
+  },
+  
+  "Combat Clutter Location": {
+    "prefix": "location",
+    "body": ["Atlanta, GA"],
+    "description": "Insert location (for SEO and local references)"
+  },
+  
+  "CTA Button Text": {
+    "prefix": "cta",
+    "body": ["Book Your Combat Clutter Consultation"],
+    "description": "Primary CTA button text"
+  },
+  
+  "Trust Indicator": {
+    "prefix": "trust",
+    "body": ["Serving Atlanta since 2023"],
+    "description": "Trust indicator for hero/footer"
+  },
+  
+  "BRAND.NAME Usage": {
+    "prefix": "brand-name",
+    "body": ["{BRAND.NAME}"],
+    "description": "Use BRAND.NAME (Combat Clutter LLC)"
+  },
+  
+  "BRAND.SHORT_NAME Usage": {
+    "prefix": "brand-short-name",
+    "body": ["{BRAND.SHORT_NAME}"],
+    "description": "Use BRAND.SHORT_NAME (Combat Clutter)"
+  },
+  
+  "BRAND.TAGLINE Usage": {
+    "prefix": "brand-tagline",
+    "body": ["{BRAND.TAGLINE}"],
+    "description": "Use BRAND.TAGLINE"
+  },
+  
+  "BRAND.LOCATION.CITY Usage": {
+    "prefix": "brand-city",
+    "body": ["{BRAND.LOCATION.CITY}"],
+    "description": "Use city name from BRAND constants"
+  },
+  
+  "React Component with Brand": {
+    "prefix": "component-brand",
+    "body": [
+      "import { BRAND } from '@/lib/brand/constants';",
+      "",
+      "export function ${1:ComponentName}() {",
+      "  return (",
+      "    <div>",
+      "      <h2>{BRAND.${2|TAGLINE,SHORT_NAME,NAME|}}</h2>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Create React component with BRAND import"
+  },
+  
+  "SEO Title Template": {
+    "prefix": "seo-title",
+    "body": ["Combat Clutter LLC | ${1:Page Title} | Atlanta Home Organization"],
+    "description": "SEO title tag template"
+  },
+  
+  "Copyright Notice": {
+    "prefix": "copyright",
+    "body": ["{BRAND.COPYRIGHT}"],
+    "description": "Dynamic copyright notice"
+  }
+}

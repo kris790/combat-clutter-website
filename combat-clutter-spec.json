@@ -1,0 +1,1093 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "metadata": {
+    "document_type": "executable_json_prompt",
+    "schema_version": "3.1.0",
+    "last_updated": "2025-12-13",
+    "last_validated": "2025-12-13",
+    "created_for": "Combat Clutter LLC - Professional Home Organization Website",
+    "client_legal_name": "Combat Clutter LLC",
+    "client_short_name": "Combat Clutter",
+    "usage_instructions": "This JSON serves as the single source of truth for Combat Clutter LLC's website. Use it to: 1) Generate code with correct branding, 2) Answer technical questions, 3) Validate implementation decisions, 4) Create documentation, 5) Guide project management. CRITICAL: Always use 'Combat Clutter LLC' for legal references and 'Combat Clutter' for conversational text.",
+    "target_audience": ["Developers", "Project Managers", "AI Assistants", "Quality Assurance", "Content Managers"],
+    "expected_response_format": {
+      "when_asked_for_json": "Always output valid JSON that conforms to the specified schema and passes JSON.parse() validation",
+      "when_generating_code": "Provide complete, production-ready implementations in markdown code blocks with language specification. ALWAYS use correct Combat Clutter branding.",
+      "when_answering_questions": "Reference specific section IDs, provide context, and explain trade-offs",
+      "default_format": "Well-structured text with clear headings and bullet points"
+    },
+    "validation_required": true,
+    "maintenance_schedule": "Update after each sprint review, content lock, and major architectural decisions"
+  },
+
+  "brand": {
+    "legal_name": "Combat Clutter LLC",
+    "short_name": "Combat Clutter",
+    "tagline": "Reclaim Your Space, Restore Your Calm",
+    "positioning": "Luxury Necessity",
+    "domain": {
+      "primary": "combatclutter.com",
+      "staging": "staging.combatclutter.com",
+      "development": "dev.combatclutter.com"
+    },
+    "location": {
+      "city": "Atlanta",
+      "state": "GA",
+      "state_full": "Georgia",
+      "metro_area": "Greater Atlanta",
+      "service_radius": "30 miles from Atlanta"
+    },
+    "established": {
+      "year": 2023,
+      "display": "Serving Atlanta since 2023"
+    },
+    "social_media": {
+      "instagram": "@combatclutteratl",
+      "facebook": "CombatClutterLLC",
+      "linkedin": "combat-clutter-llc"
+    },
+    "usage_rules": {
+      "legal_contexts": {
+        "correct": "Combat Clutter LLC",
+        "examples": ["Copyright notices", "Terms of Service", "Privacy Policy", "Contracts", "Legal disclaimers", "Business registration"]
+      },
+      "conversational_contexts": {
+        "correct": "Combat Clutter",
+        "examples": ["Marketing copy", "Blog posts", "Social media", "Casual references", "Testimonials", "Email communications"]
+      },
+      "incorrect_variations": [
+        "combat clutter",
+        "CombatClutter",
+        "Combat Clutter llc",
+        "Combat-Clutter",
+        "COMBAT CLUTTER"
+      ],
+      "seo_usage": {
+        "primary_keyword": "Combat Clutter",
+        "secondary_keywords": ["Combat Clutter LLC", "Combat Clutter Atlanta", "Combat Clutter organizer"],
+        "title_tag_format": "Combat Clutter LLC | [Page Title] | Atlanta Home Organization"
+      }
+    },
+    "voice_and_tone": {
+      "personality": "Warm, authoritative, approachable",
+      "voice_attributes": ["Professional", "Empowering", "Solution-focused", "Non-judgmental"],
+      "tone_guidelines": {
+        "do": [
+          "Use active voice and second person ('You deserve calm')",
+          "Focus on benefits over features ('Save time' not 'Organized shelves')",
+          "Be encouraging and empowering",
+          "Use concrete, jargon-free language"
+        ],
+        "dont": [
+          "Use passive voice",
+          "Employ industry buzzwords",
+          "Be condescending or preachy",
+          "Make hyperbolic claims"
+        ]
+      },
+      "example_phrases": {
+        "hero_headlines": [
+          "Reclaim Your Space, Restore Your Calm",
+          "Transform Chaos Into Clarity",
+          "Your Partner in Creating Peaceful Spaces"
+        ],
+        "cta_variations": [
+          "Book Your Combat Clutter Consultation",
+          "Start Your Combat Clutter Journey",
+          "Schedule Your Free Assessment"
+        ],
+        "service_descriptions": [
+          "Combat Clutter solution",
+          "Combat Clutter process",
+          "Combat Clutter approach"
+        ]
+      }
+    }
+  },
+
+  "llm_instructions": {
+    "role": "You are a technical architect and senior full-stack developer specializing in Next.js 15, TypeScript, and luxury brand websites. You have 10+ years of experience building conversion-optimized, high-performance web applications. You are currently building the website for Combat Clutter LLC, a luxury home organization service in Atlanta, GA.",
+    "critical_brand_requirement": "ALWAYS use 'Combat Clutter LLC' in legal contexts (copyright, terms, privacy) and 'Combat Clutter' in conversational contexts (marketing, blog, casual references). Never use incorrect variations like 'combat clutter' (lowercase) or 'CombatClutter' (no space).",
+    "capabilities": [
+      "Generate production-ready Next.js 15 (App Router) code with TypeScript",
+      "Implement responsive, accessible UI components with Tailwind CSS using Combat Clutter brand colors",
+      "Design scalable API routes with proper error handling",
+      "Optimize for Core Web Vitals and SEO with Combat Clutter keywords",
+      "Integrate with third-party services (HubSpot, Sanity, Resend)",
+      "Create comprehensive testing strategies",
+      "Provide architectural guidance and trade-off analysis"
+    ],
+    "constraints": {
+      "technical": [
+        "All code must use TypeScript with strict type checking",
+        "Components must be mobile-first and WCAG 2.1 AA compliant",
+        "Performance budgets must not be exceeded",
+        "Security best practices must be followed (never expose secrets)",
+        "Error handling must be comprehensive and user-friendly"
+      ],
+      "branding": [
+        "Use 'Combat Clutter LLC' in legal/formal contexts",
+        "Use 'Combat Clutter' in marketing/conversational contexts",
+        "Always include location reference 'Atlanta' or 'Atlanta, GA' for local SEO",
+        "Copyright format: '© 2023 Combat Clutter LLC'",
+        "CTA buttons must include 'Combat Clutter' (e.g., 'Book Your Combat Clutter Consultation')"
+      ],
+      "scope_boundary": "Only implement features listed in phase_1_mvp.in_scope",
+      "unknown_features": "Respond: 'This is out of scope for Combat Clutter MVP. Consider for Phase 2 or 3.'",
+      "citation_requirement": "Reference specific section IDs (e.g., components.hero_section) when making implementation claims"
+    },
+    "response_guidelines": {
+      "when_generating_code": {
+        "include": [
+          "Complete component with proper imports",
+          "TypeScript interfaces",
+          "Combat Clutter brand constants imported from lib/brand/constants.ts",
+          "Error handling",
+          "Comments explaining key decisions",
+          "Performance considerations",
+          "Correct brand usage (check brand.usage_rules)"
+        ],
+        "format": "Markdown code blocks with language specification"
+      },
+      "when_answering_questions": {
+        "include": ["Specific section references", "Context", "Trade-off analysis", "Phase considerations", "Combat Clutter brand alignment"]
+      },
+      "json_output_requirements": {
+        "strict_validation": true,
+        "schema_conformance": "Must conform to #/$defs/llm_response schema",
+        "error_handling": "If JSON generation fails, return structured error with diagnostic"
+      }
+    },
+    "hallucination_guardrails": {
+      "fact_checking": "Only use information provided in this JSON prompt",
+      "invention_prohibition": "Do not invent new features, technologies, or requirements for Combat Clutter",
+      "scope_verification": "Verify all recommendations against phase_1_mvp.in_scope",
+      "citation_requirement": "Always cite the specific section supporting your answer",
+      "brand_verification": "Always verify brand usage against brand.usage_rules before outputting"
+    }
+  },
+
+  "project": {
+    "id": "combat-clutter-website-v1",
+    "name": "Combat Clutter LLC Website MVP",
+    "package_json_config": {
+      "name": "combat-clutter-website",
+      "description": "Official website for Combat Clutter LLC - Professional home organization services in Atlanta, GA",
+      "author": "Combat Clutter LLC",
+      "homepage": "https://combatclutter.com",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/combat-clutter/website"
+      }
+    },
+    "version": {
+      "value": "3.1.0",
+      "type": "semantic_version"
+    },
+    "phase": {
+      "value": "phase_1_mvp",
+      "type": "enum",
+      "enum": ["phase_1_mvp", "phase_2_enhancements", "phase_3_scale"]
+    },
+    "target_launch_date": {
+      "value": "8 weeks from project start",
+      "type": "relative_date",
+      "reference_point": "project_start"
+    },
+    "business_objectives": {
+      "primary": "Establish digital presence for Combat Clutter LLC and capture qualified leads in Atlanta metro area",
+      "secondary": "Build Combat Clutter brand credibility as luxury service provider",
+      "success_criteria": {
+        "month_1": {
+          "qualified_leads": {
+            "value": 20,
+            "type": "number",
+            "unit": "leads/month",
+            "min": 0,
+            "max": 100
+          },
+          "conversion_rate": {
+            "value": 10,
+            "type": "number",
+            "unit": "percentage",
+            "min": 0,
+            "max": 100
+          }
+        },
+        "month_3": {
+          "qualified_leads": {
+            "value": 50,
+            "type": "number",
+            "unit": "leads/month",
+            "min": 0,
+            "max": 200
+          },
+          "conversion_rate": {
+            "value": 12,
+            "type": "number",
+            "unit": "percentage",
+            "min": 0,
+            "max": 100,
+            "constraint": ">="
+          },
+          "technical": {
+            "page_load": {
+              "value": 2.5,
+              "type": "number",
+              "unit": "seconds",
+              "constraint": "<"
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "architecture": {
+    "stack": {
+      "framework": {
+        "name": "Next.js",
+        "version": {
+          "value": "15.0.0",
+          "type": "semantic_version",
+          "constraint": "^15.0.0"
+        },
+        "router": {
+          "value": "App Router",
+          "type": "enum",
+          "enum": ["App Router", "Pages Router"]
+        },
+        "rendering_strategy": {
+          "static": {
+            "value": ["Home", "Services", "About", "Portfolio"],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dynamic": {
+            "value": ["Contact"],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "isr": {
+            "portfolio": {
+              "value": 3600,
+              "type": "number",
+              "unit": "seconds"
+            },
+            "blog": {
+              "value": 7200,
+              "type": "number",
+              "unit": "seconds"
+            }
+          }
+        }
+      },
+      "language": {
+        "name": "TypeScript",
+        "version": {
+          "value": "5.0.0",
+          "type": "semantic_version",
+          "constraint": "^5.0.0"
+        },
+        "config": {
+          "strict": {
+            "value": true,
+            "type": "boolean"
+          },
+          "noImplicitAny": {
+            "value": true,
+            "type": "boolean"
+          },
+          "strictNullChecks": {
+            "value": true,
+            "type": "boolean"
+          }
+        }
+      },
+      "styling": {
+        "name": "Tailwind CSS",
+        "version": {
+          "value": "3.4.0",
+          "type": "semantic_version",
+          "constraint": "^3.4.0"
+        },
+        "config": {
+          "jit": {
+            "value": true,
+            "type": "boolean"
+          },
+          "content": {
+            "value": ["./src/**/*.{js,ts,jsx,tsx}"],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "cms": {
+        "name": "Sanity.io",
+        "plan": {
+          "value": "Free",
+          "type": "enum",
+          "enum": ["Free", "Team", "Business", "Enterprise"]
+        }
+      },
+      "hosting": {
+        "name": "Vercel",
+        "plan": {
+          "value": "Pro",
+          "type": "enum",
+          "enum": ["Hobby", "Pro", "Enterprise"]
+        }
+      }
+    },
+
+    "repository_structure": {
+      "base_path": {
+        "value": "/",
+        "type": "string"
+      },
+      "directories": {
+        "src/app": {
+          "description": "Next.js App Router pages and API routes",
+          "required": true
+        },
+        "src/components/brand": {
+          "description": "Combat Clutter branded components (Logo, BrandFooter, etc.)",
+          "required": true
+        },
+        "src/components/layout": {
+          "description": "Layout components (Header, Footer, Navigation)",
+          "required": true
+        },
+        "src/components/sections": {
+          "description": "Page sections (Hero, PricingTiers, Portfolio)",
+          "required": true
+        },
+        "src/components/ui": {
+          "description": "Reusable UI primitives (Button, Card, Input)",
+          "required": true
+        },
+        "src/lib/brand": {
+          "description": "Brand constants and utilities",
+          "required": true,
+          "contents": {
+            "constants.ts": {
+              "description": "BRAND object with Combat Clutter details",
+              "required": true
+            },
+            "seo.ts": {
+              "description": "SEO utilities with Combat Clutter keywords",
+              "required": true
+            }
+          }
+        },
+        "src/lib": {
+          "description": "Utility functions, API clients, helpers",
+          "required": true
+        },
+        "src/types": {
+          "description": "TypeScript type definitions",
+          "required": true
+        },
+        "public": {
+          "description": "Static assets (images, fonts, favicons)",
+          "required": true
+        }
+      }
+    },
+
+    "dependencies": {
+      "npm_packages": {
+        "required": [
+          {
+            "name": "next",
+            "version": "^15.0.0",
+            "purpose": "React framework with App Router"
+          },
+          {
+            "name": "react",
+            "version": "^18.2.0",
+            "purpose": "UI library"
+          },
+          {
+            "name": "react-dom",
+            "version": "^18.2.0",
+            "purpose": "React DOM renderer"
+          },
+          {
+            "name": "typescript",
+            "version": "^5.0.0",
+            "purpose": "Type safety"
+          },
+          {
+            "name": "tailwindcss",
+            "version": "^3.4.0",
+            "purpose": "Utility-first CSS"
+          },
+          {
+            "name": "react-hook-form",
+            "version": "^7.50.0",
+            "purpose": "Form validation"
+          },
+          {
+            "name": "@sanity/client",
+            "version": "^6.0.0",
+            "purpose": "Sanity CMS integration"
+          }
+        ],
+        "optional": [
+          {
+            "name": "@radix-ui/react-dialog",
+            "version": "^1.0.0",
+            "purpose": "Accessible modal for portfolio",
+            "recommended_for": "Portfolio project modals"
+          },
+          {
+            "name": "lucide-react",
+            "version": "^0.263.0",
+            "purpose": "Icon library"
+          }
+        ]
+      }
+    },
+
+    "performance_budgets": {
+      "javascript": {
+        "first_load": {
+          "value": 200,
+          "type": "number",
+          "unit": "KB",
+          "constraint": "<="
+        },
+        "per_route": {
+          "value": 50,
+          "type": "number",
+          "unit": "KB",
+          "constraint": "<="
+        }
+      },
+      "css": {
+        "critical": {
+          "value": 20,
+          "type": "number",
+          "unit": "KB",
+          "constraint": "<="
+        }
+      },
+      "images": {
+        "hero": {
+          "desktop": {
+            "value": 500,
+            "type": "number",
+            "unit": "KB",
+            "constraint": "<="
+          },
+          "mobile": {
+            "value": 250,
+            "type": "number",
+            "unit": "KB",
+            "constraint": "<="
+          }
+        },
+        "total_page_weight": {
+          "value": 1.5,
+          "type": "number",
+          "unit": "MB",
+          "constraint": "<="
+        }
+      }
+    }
+  },
+
+  "components": {
+    "brand_constants_file": {
+      "file_path": "src/lib/brand/constants.ts",
+      "required": true,
+      "priority": "p0",
+      "description": "Central source of truth for Combat Clutter brand information",
+      "export_structure": {
+        "BRAND": {
+          "NAME": "Combat Clutter LLC",
+          "SHORT_NAME": "Combat Clutter",
+          "TAGLINE": "Reclaim Your Space, Restore Your Calm",
+          "DOMAIN": "combatclutter.com",
+          "LOCATION": {
+            "CITY": "Atlanta",
+            "STATE": "GA",
+            "STATE_FULL": "Georgia",
+            "DISPLAY": "Atlanta, GA",
+            "SERVICE_AREA": "Greater Atlanta"
+          },
+          "ESTABLISHED": 2023,
+          "CONTACT": {
+            "EMAIL": "hello@combatclutter.com",
+            "PHONE": "+1 (404) XXX-XXXX",
+            "ADDRESS": {
+              "STREET": "TBD",
+              "CITY": "Atlanta",
+              "STATE": "GA",
+              "ZIP": "30303"
+            }
+          },
+          "SOCIAL": {
+            "INSTAGRAM": "@combatclutteratl",
+            "FACEBOOK": "CombatClutterLLC",
+            "LINKEDIN": "combat-clutter-llc"
+          }
+        }
+      }
+    },
+
+    "ui_foundation": {
+      "design_system": {
+        "colors": {
+          "primary": {
+            "value": "#1A1A1A",
+            "name": "Charcoal",
+            "usage": "Headings, primary text, authority",
+            "type": "color_hex"
+          },
+          "secondary": {
+            "value": "#F5F5F0",
+            "name": "Off-White",
+            "usage": "Backgrounds, clean surfaces",
+            "type": "color_hex"
+          },
+          "accent": {
+            "value": "#D4AF37",
+            "name": "Gold",
+            "usage": "Premium touches, CTAs (sparingly)",
+            "type": "color_hex"
+          },
+          "neutrals": {
+            "gray_600": "#6B6B6B",
+            "gray_200": "#E0E0E0",
+            "white": "#FFFFFF"
+          }
+        },
+        "typography": {
+          "headings": {
+            "font_family": "Playfair Display, serif",
+            "weights": [400, 600, 700],
+            "usage": "Classic, elegant, for H1-H6"
+          },
+          "body": {
+            "font_family": "Inter, sans-serif",
+            "weights": [400, 500, 600],
+            "usage": "Modern, readable, for paragraphs"
+          },
+          "scale": {
+            "mobile_body": "14px",
+            "desktop_body": "16px",
+            "headings": "Modular scale (1.25 ratio)"
+          }
+        },
+        "spacing": {
+          "system": "8px grid (Tailwind default)",
+          "vertical_padding": "80-120px between sections"
+        }
+      }
+    },
+
+    "hero_section": {
+      "id": "hero_section",
+      "component_name": "Hero",
+      "file_path": "src/components/sections/Hero.tsx",
+      "type": "page_section",
+      "page": "home",
+      "status": "required",
+      "priority": "p0",
+      "brand_requirements": {
+        "headline": "Reclaim Your Space, Restore Your Calm",
+        "subheadline": "Bespoke organization solutions for discerning homeowners in Atlanta",
+        "primary_cta": {
+          "text": "Book Your Combat Clutter Consultation",
+          "action": "/contact"
+        },
+        "trust_indicator": "Serving Atlanta since 2023"
+      },
+      "technical_requirements": {
+        "video_background": {
+          "desktop": {
+            "enabled": true,
+            "format": "mp4",
+            "max_size": "2MB",
+            "autoplay": true,
+            "loop": true,
+            "muted": true
+          },
+          "mobile": {
+            "enabled": false,
+            "fallback": "High-quality static image"
+          }
+        },
+        "performance": {
+          "lcp_target": "<2.5s",
+          "above_fold": true,
+          "preload_critical_assets": true
+        },
+        "accessibility": {
+          "heading_level": "h1",
+          "contrast_ratio": ">=4.5:1",
+          "focus_visible": true
+        }
+      },
+      "implementation_example": {
+        "imports": [
+          "import { BRAND } from '@/lib/brand/constants'",
+          "import { Button } from '@/components/ui/Button'",
+          "import Link from 'next/link'"
+        ],
+        "key_elements": [
+          "<h1>{BRAND.TAGLINE}</h1>",
+          "<p>Bespoke organization solutions for discerning homeowners in {BRAND.LOCATION.CITY}</p>",
+          "<Button asChild><Link href='/contact'>Book Your {BRAND.SHORT_NAME} Consultation</Link></Button>",
+          "<span className='text-sm'>{BRAND.ESTABLISHED && `Serving ${BRAND.LOCATION.CITY} since ${BRAND.ESTABLISHED}`}</span>"
+        ]
+      }
+    },
+
+    "pricing_tiers": {
+      "id": "pricing_tiers",
+      "component_name": "PricingTiers",
+      "file_path": "src/components/sections/PricingTiers.tsx",
+      "type": "ui_component_group",
+      "page": "services",
+      "status": "required",
+      "priority": "p0",
+      "instances": [
+        {
+          "id": "pricing_focused",
+          "title": "Focused Space",
+          "subtitle": "Master Closet, Pantry, or Home Office",
+          "price": "Starting from $1,800",
+          "includes": [
+            "On-site assessment",
+            "Custom Combat Clutter organizing plan",
+            "3-5 hours of hands-on organizing",
+            "Product sourcing (billed separately)",
+            "30-day follow-up"
+          ],
+          "cta": "Start Your Combat Clutter Transformation",
+          "featured": false
+        },
+        {
+          "id": "pricing_multi_room",
+          "title": "Multi-Room Package",
+          "subtitle": "Kitchen + Office, Closet + Garage",
+          "price": "$4,000 – $7,000",
+          "includes": [
+            "Everything in Focused Space",
+            "Coordination across multiple areas",
+            "8-12 hours of organizing",
+            "Family workflow training",
+            "90-day maintenance check-in"
+          ],
+          "cta": "Book Your Combat Clutter Package",
+          "featured": true
+        },
+        {
+          "id": "pricing_whole_home",
+          "title": "Whole-Home Solution",
+          "subtitle": "Comprehensive transformation",
+          "price": "$8,000+",
+          "includes": [
+            "Everything in Multi-Room",
+            "Full home audit",
+            "20+ hours of organizing",
+            "Long-term systems design",
+            "Quarterly maintenance visits (Year 1)"
+          ],
+          "cta": "Discuss Your Combat Clutter Vision",
+          "featured": false
+        }
+      ],
+      "disclaimer": "Final pricing depends on scope, product selections, travel distance within the Atlanta metro area, and project complexity. Storage products, labels, and specialty items are billed at cost + 15%. We provide a detailed line-item estimate before any work begins."
+    }
+  },
+
+  "seo_strategy": {
+    "primary_keywords": [
+      "Combat Clutter",
+      "Combat Clutter LLC",
+      "professional organizer Atlanta",
+      "home organization Atlanta",
+      "Combat Clutter Atlanta"
+    ],
+    "target_keywords": [
+      {
+        "keyword": "professional organizer Atlanta",
+        "search_volume": "1,200/mo",
+        "difficulty": "Medium",
+        "target_page": "Home"
+      },
+      {
+        "keyword": "home organization services Atlanta",
+        "search_volume": "800/mo",
+        "difficulty": "Low",
+        "target_page": "Services"
+      },
+      {
+        "keyword": "Combat Clutter",
+        "search_volume": "N/A (branded)",
+        "difficulty": "Low",
+        "target_page": "Home, All pages"
+      }
+    ],
+    "title_tag_templates": {
+      "home": "Combat Clutter LLC | Professional Home Organization in Atlanta, GA",
+      "services": "Services | Combat Clutter LLC | Atlanta Home Organizing",
+      "portfolio": "Portfolio | Combat Clutter LLC | Before & After Transformations",
+      "about": "About Us | Combat Clutter LLC | Your Atlanta Organizing Partners",
+      "contact": "Contact | Combat Clutter LLC | Book Your Consultation"
+    },
+    "meta_description_templates": {
+      "home": "Combat Clutter LLC provides luxury home organization services in Atlanta, GA. Transparent pricing, proven process, stunning results. Serving Atlanta since 2023.",
+      "services": "Discover Combat Clutter's bespoke organizing services: Focused Space, Multi-Room, and Whole-Home solutions. Transparent pricing starting at $1,800.",
+      "portfolio": "See Combat Clutter's before-and-after transformations across Atlanta. Real homes, real results, lasting systems.",
+      "about": "Meet the Combat Clutter team. Professional organizers dedicated to creating calm, functional spaces for Atlanta homeowners.",
+      "contact": "Ready to reclaim your space? Book your free Combat Clutter consultation today. Serving the Greater Atlanta area."
+    }
+  },
+
+  "validation_rules": {
+    "brand_compliance": {
+      "legal_contexts": {
+        "required_format": "Combat Clutter LLC",
+        "contexts": ["copyright", "footer", "legal pages", "terms of service"],
+        "examples": {
+          "correct": "© 2023 Combat Clutter LLC",
+          "incorrect": "© 2023 Combat Clutter"
+        }
+      },
+      "conversational_contexts": {
+        "required_format": "Combat Clutter",
+        "contexts": ["headlines", "body copy", "CTAs", "testimonials"],
+        "examples": {
+          "correct": "Book Your Combat Clutter Consultation",
+          "incorrect": "Book Your Combat Clutter LLC Consultation"
+        }
+      },
+      "location_requirements": {
+        "required": "Always include 'Atlanta' or 'Atlanta, GA' on first mention per page",
+        "seo_requirement": "Include location in title tags and meta descriptions"
+      }
+    },
+    "type_definitions": {
+      "priority_type": {
+        "type": "enum",
+        "values": ["p0", "p1", "p2", "p3"],
+        "description": "P0 = blocker, P1 = high priority, P2 = medium, P3 = low"
+      }
+    },
+    "test_cases": {
+      "brand_display": [
+        {
+          "name": "hero_section_branding",
+          "input": "Home page load",
+          "expected": {
+            "company_name_displayed": true,
+            "name_format": "Combat Clutter LLC in legal context, Combat Clutter in conversational",
+            "tagline_present": "Reclaim Your Space, Restore Your Calm",
+            "location_mentioned": "Atlanta appears in copy"
+          },
+          "test_type": "brand_compliance"
+        },
+        {
+          "name": "footer_copyright",
+          "input": "Page footer",
+          "expected": {
+            "copyright_text": "© 2023 Combat Clutter LLC",
+            "legal_name_used": true,
+            "location_included": true
+          },
+          "test_type": "brand_compliance"
+        }
+      ],
+      "form_validation": [
+        {
+          "name": "contact_form_submission",
+          "input": {
+            "email": "client@example.com",
+            "name": "Jane Smith",
+            "zip_code": "30303",
+            "project_type": "residential"
+          },
+          "expected": {
+            "status": "success",
+            "confirmation_message": "Thank you for contacting Combat Clutter",
+            "location_verification": "Atlanta service area check"
+          },
+          "test_type": "functional"
+        }
+      ]
+    }
+  },
+
+  "decision_matrices": {
+    "brand_usage": {
+      "when_to_use_legal_name": {
+        "conditions": ["Copyright notices", "Legal disclaimers", "Terms of Service", "Privacy Policy", "Business registration", "Footer"],
+        "required_format": "Combat Clutter LLC",
+        "examples": [
+          "© 2023 Combat Clutter LLC. All rights reserved.",
+          "Combat Clutter LLC Terms of Service"
+        ]
+      },
+      "when_to_use_short_name": {
+        "conditions": ["Marketing copy", "Blog posts", "CTAs", "Testimonials", "Email communications", "Social media"],
+        "required_format": "Combat Clutter",
+        "examples": [
+          "Book Your Combat Clutter Consultation",
+          "See Combat Clutter's latest transformation",
+          "The Combat Clutter team helped us organize"
+        ]
+      }
+    }
+  },
+
+  "error_handling": {
+    "scenarios": {
+      "brand_validation_error": {
+        "detection": "Incorrect brand usage in code",
+        "fallback_strategy": {
+          "developer": "Show error in VS Code with suggested correction",
+          "ci_cd": "Fail build with specific error message",
+          "user": "Not visible to end users"
+        },
+        "recovery": "Run brand validation script and fix identified issues"
+      }
+    }
+  },
+
+  "testing_strategy": {
+    "unit_tests": {
+      "framework": "Jest + React Testing Library",
+      "coverage_target": 80,
+      "critical_paths": [
+        "Brand usage in components",
+        "Form validation and submission",
+        "Combat Clutter CTA rendering"
+      ]
+    },
+    "brand_tests": {
+      "framework": "Custom script",
+      "script_path": "scripts/validate-brand.js",
+      "what_it_checks": [
+        "Correct usage of 'Combat Clutter LLC' vs 'Combat Clutter'",
+        "Presence of location references ('Atlanta')",
+        "Correct copyright format",
+        "SEO title tags include brand and location"
+      ]
+    }
+  },
+
+  "deployment": {
+    "environments": {
+      "development": {
+        "url": "https://dev.combatclutter.com",
+        "branch": "develop"
+      },
+      "staging": {
+        "url": "https://staging.combatclutter.com",
+        "branch": "staging"
+      },
+      "production": {
+        "url": "https://combatclutter.com",
+        "branch": "main",
+        "brand_verification": {
+          "copyright": "© 2023 Combat Clutter LLC",
+          "title_tag": "Includes 'Combat Clutter LLC' and 'Atlanta'",
+          "cta_buttons": "Include 'Combat Clutter'"
+        }
+      }
+    }
+  },
+
+  "content_requirements": {
+    "brand_voice": {
+      "tone": "Warm but authoritative: 'We understand' not 'We're experts'",
+      "focus": "Benefit-driven: 'Save time' not 'Organized shelves'",
+      "language": "Jargon-free: 'Clutter' not 'High-density storage inefficiencies'"
+    },
+    "portfolio_projects": {
+      "template": {
+        "title_format": "[Room Type] Transformation with Combat Clutter | [Neighborhood], Atlanta",
+        "narrative_structure": [
+          "Client Challenge (2-3 sentences)",
+          "Combat Clutter Solution (3-4 sentences with specific strategies)",
+          "The Result (2-3 sentences with measurable outcomes)"
+        ]
+      }
+    },
+    "testimonials": {
+      "format": "\"Combat Clutter transformed our [space]. [Specific result].\" - [Client Name], [Project Type]",
+      "brand_inclusion": "Include 'Combat Clutter' in testimonial context when natural"
+    }
+  },
+
+  "phase_planning": {
+    "phase_1_mvp": {
+      "duration": {
+        "value": 8,
+        "type": "number",
+        "unit": "weeks"
+      },
+      "focus": "Core Combat Clutter website with lead capture",
+      "in_scope": [
+        "5 core pages (Home, Services, Portfolio, About, Contact)",
+        "Multi-step contact form with Combat Clutter branding",
+        "Portfolio grid with 10-15 Combat Clutter projects",
+        "Transparent pricing display",
+        "Basic SEO setup with Combat Clutter keywords",
+        "HubSpot CRM integration",
+        "Brand constants file (src/lib/brand/constants.ts)",
+        "VS Code snippets for brand consistency"
+      ],
+      "out_of_scope": [
+        "Blog/content hub",
+        "E-commerce",
+        "Client portal",
+        "Advanced portfolio filters",
+        "Email marketing automation"
+      ]
+    }
+  },
+
+  "vscode_setup": {
+    "snippets_file": ".vscode/combat-clutter.code-snippets",
+    "snippets": {
+      "brand_name": {
+        "prefix": "brand",
+        "body": "Combat Clutter LLC",
+        "description": "Insert legal brand name"
+      },
+      "brand_short": {
+        "prefix": "brand-short",
+        "body": "Combat Clutter",
+        "description": "Insert conversational brand name"
+      },
+      "brand_tagline": {
+        "prefix": "tagline",
+        "body": "Reclaim Your Space, Restore Your Calm",
+        "description": "Insert Combat Clutter tagline"
+      },
+      "brand_import": {
+        "prefix": "import-brand",
+        "body": "import { BRAND } from '@/lib/brand/constants';",
+        "description": "Import BRAND constants"
+      },
+      "brand_location": {
+        "prefix": "location",
+        "body": "Atlanta, GA",
+        "description": "Insert location"
+      }
+    },
+    "search_replace_patterns": {
+      "incorrect_to_correct": [
+        { "find": "combat clutter", "replace": "Combat Clutter" },
+        { "find": "CombatClutter", "replace": "Combat Clutter" },
+        { "find": "Combat Clutter llc", "replace": "Combat Clutter LLC" },
+        { "find": "Combat-Clutter", "replace": "Combat Clutter" },
+        { "find": "COMBAT CLUTTER", "replace": "Combat Clutter" }
+      ]
+    },
+    "recommended_extensions": [
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-typescript-next",
+      "aaron-bond.better-comments"
+    ]
+  },
+
+  "$defs": {
+    "llm_response": {
+      "type": "object",
+      "required": ["status", "data", "validation", "metadata"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["success", "partial_success", "error", "validation_failed"],
+          "description": "Overall response status"
+        },
+        "data": {
+          "type": ["object", "array", "string"],
+          "description": "Primary response content (code, answer, etc.)"
+        },
+        "validation": {
+          "type": "object",
+          "required": ["schema_valid", "brand_compliant"],
+          "properties": {
+            "schema_valid": {
+              "type": "boolean",
+              "description": "Whether response conforms to schema"
+            },
+            "brand_compliant": {
+              "type": "boolean",
+              "description": "Whether content follows Combat Clutter branding guidelines"
+            },
+            "warnings": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Non-blocking issues or recommendations"
+            },
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Validation errors if any"
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "required": ["timestamp", "section_references", "phase_compliance"],
+          "properties": {
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "section_references": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Specific section IDs referenced in response"
+            },
+            "phase_compliance": {
+              "type": "boolean",
+              "description": "Whether response is within phase_1_mvp scope"
+            },
+            "brand_compliance_check": {
+              "type": "object",
+              "properties": {
+                "legal_name_used": {
+                  "type": "boolean",
+                  "description": "Whether 'Combat Clutter LLC' used correctly"
+                },
+                "short_name_used": {
+                  "type": "boolean",
+                  "description": "Whether 'Combat Clutter' used correctly"
+                },
+                "location_included": {
+                  "type": "boolean",
+                  "description": "Whether 'Atlanta' referenced appropriately"
+                }
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
