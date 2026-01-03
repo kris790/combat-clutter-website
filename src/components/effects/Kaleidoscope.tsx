@@ -48,7 +48,7 @@ export function Kaleidoscope({
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas, { passive: true });
 
     let animationId: number;
     let time = 0;
