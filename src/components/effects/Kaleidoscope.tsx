@@ -38,7 +38,7 @@ export function Kaleidoscope({
 
     // Set canvas size
     const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = (typeof window !== 'undefined' ? window.devicePixelRatio : 1) || 1;
       const rect = canvas.getBoundingClientRect();
       
       canvas.width = rect.width * dpr;
@@ -118,7 +118,9 @@ export function Kaleidoscope({
     };
 
     // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = typeof window !== 'undefined' 
+      ? window.matchMedia('(prefers-reduced-motion: reduce)').matches 
+      : false;
     
     if (!prefersReducedMotion) {
       drawKaleidoscope();
