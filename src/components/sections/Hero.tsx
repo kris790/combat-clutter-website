@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BRAND, HERO_CONTENT } from '@/lib/brand/constants';
 import { Button } from '@/components/ui/Button';
+import { Kaleidoscope } from '@/components/effects/Kaleidoscope';
 
 export function Hero() {
   const [isMounted, setIsMounted] = useState(false);
@@ -29,6 +30,13 @@ export function Hero() {
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-neutral-900" />
+        {/* Kaleidoscope Effect */}
+        <Kaleidoscope 
+          segments={12}
+          speed={30}
+          opacity={0.15}
+          colors={['#D4AF37', '#F5F5F0', '#6B6B6B']}
+        />
         {/* Optional: Add pattern overlay */}
         <div 
           className="absolute inset-0 opacity-5"
